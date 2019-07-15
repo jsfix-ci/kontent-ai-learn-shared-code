@@ -1,0 +1,16 @@
+{
+  "name": "cloud-docs-shared-code",
+  "version": "1.0.0",
+  "description": "Kentico Cloud Docs Shared Code",
+  "repository": "https://github.com/KenticoDocs/cloud-docs-shared-code.git",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "tslint": "tslint --project tsconfig.json"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
+}
