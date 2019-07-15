@@ -1,22 +1,33 @@
 export interface IKenticoCloudError extends Error {
     readonly errorCode: number;
 }
-export interface IEventGridEvent {
+export declare type IWebhookEventGridEvent = IEventGridEvent<IEventGridWebhookData>;
+export declare type IBlobEventGridEvent = IEventGridEvent<IEventGridBlobData>;
+export declare type INotificationEventGridEvent = IEventGridEvent<IEventGridNotificationData>;
+export interface IEventGridEvent<EventGridEventData> {
     readonly id: string;
     readonly topic?: string;
     readonly subject: string;
-    readonly data: IEventGridEventData;
+    readonly data: EventGridEventData;
     readonly eventType: string;
     readonly eventTime: Date;
     readonly metadataVersion?: string;
     readonly dataVersion: string;
 }
-export interface IEventGridEventData {
+export interface IEventGridWebhookData {
     readonly test: string;
     readonly webhook: {
         readonly items: IWebhookContentItem[];
         readonly taxonomies: unknown;
     };
+}
+export interface IEventGridBlobData {
+    readonly url: string;
+}
+export interface IEventGridNotificationData {
+    activityTitle: string;
+    mode: string;
+    text: string;
 }
 export interface IWebhookContentItem {
     readonly codename: string;
