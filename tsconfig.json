@@ -2,10 +2,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "outDir": "dist",
+    "lib": [
+      "es7"
+    ],
+    "outDir": "lib",
+    "declaration": true,
     "rootDir": ".",
     "sourceMap": true,
-    "strict": true,
+    "strict": false,
     "strictPropertyInitialization": false
   }
 }
