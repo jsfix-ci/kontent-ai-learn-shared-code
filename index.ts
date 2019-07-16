@@ -31,9 +31,9 @@ export interface IEventGridBlobData {
 }
 
 export interface IEventGridNotificationData {
-    activityTitle: string,
-    mode: string,
-    text: string,
+    readonly activityTitle: string,
+    readonly mode: string,
+    readonly text: string,
 }
 
 export interface IWebhookContentItem {
