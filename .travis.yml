@@ -2,9 +2,15 @@ sudo: required
 language: node_js
 node_js:
   - "10"
+before_deploy:
+  - yarn tslint
+  - yarn run build
+  - mv package.json ./lib/package.json
+  - cd ./lib/
 deploy:
   provider: npm
   email: "$NPM_USER_EMAIL"
   api_key: "$NPM_TOKEN"
+  skip_cleanup: true
   on:
     branch: develop

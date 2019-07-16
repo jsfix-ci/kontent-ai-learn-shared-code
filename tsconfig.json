@@ -11,5 +11,9 @@
     "sourceMap": true,
     "strict": false,
     "strictPropertyInitialization": false
-  }
+  },
+  "exclude": [
+    "**/*.test.ts",
+    "lib"
+  ]
 }

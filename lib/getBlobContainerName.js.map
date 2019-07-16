@@ -1,1 +1,0 @@
-{"version":3,"file":"getBlobContainerName.js","sourceRoot":"","sources":["../getBlobContainerName.ts"],"names":[],"mappings":";;AAEa,QAAA,oBAAoB,GAAG,CAChC,cAAmD,EAC7C,EAAE;IACR,MAAM,kBAAkB,GAAG,uBAAuB,CAAC;IACnD,MAAM,OAAO,GAAG,cAAc,CAAC,OAAO,CAAC,KAAK,CAAC,kBAAkB,CAAC,CAAC;IAEjE,OAAO,OAAO,CAAC,CAAC,CAAC,OAAO,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC;AACrC,CAAC,CAAC"}

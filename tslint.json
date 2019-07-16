@@ -4,9 +4,6 @@
     "tslint:recommended"
   ],
   "linterOptions": {
-    "include": [
-      "./"
-    ],
     "exclude": [
       "./node_modules/"
     ]
