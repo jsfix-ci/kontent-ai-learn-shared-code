@@ -26,7 +26,6 @@ export interface IZapiSpecification extends ISystemAttributes {
     readonly contact: string[],
     readonly description: string,
     readonly license: string[],
-    readonly pathOperations: string[],
     readonly security: string[],
     readonly servers: string,
     readonly termsOfService: string,
@@ -63,12 +62,12 @@ export interface ICategory extends ISystemAttributes {
     readonly apiReference: string[],
     readonly description: string,
     readonly name: string,
+    readonly pathOperations: string[],
     readonly url: string,
 }
 
 export interface IPathOperation extends ISystemAttributes {
     readonly apiReference: string[],
-    readonly category: string[],
     readonly codeSamples: string[],
     readonly deprecated: string[],
     readonly description: string,
@@ -191,7 +190,7 @@ export interface ISchemaObject extends ISystemAttributes, ISchemaElements {
     readonly apiReference: string[],
     readonly required: string,
     readonly properties: string,
-    readonly additionalProperties: string[],
+    readonly additionalProperties: string,
 }
 
 export interface ISchemaOneOf extends ISystemAttributes, ISchemaElements {
