@@ -5,11 +5,12 @@ import {
     StorageURL,
 } from '@azure/storage-blob';
 import { JQueryStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
+import { Configuration } from './configuration';
 
 export const getBlobFromStorage = async <BlobData>(
     url: string,
-    azureAccountName: string,
-    azureStorageKey: string,
+    azureAccountName: string = Configuration.keys.azureAccountName,
+    azureStorageKey: string = Configuration.keys.azureStorageKey,
 ): Promise<BlobData> => {
     const sharedKeyCredential = new SharedKeyCredential(azureAccountName, azureStorageKey);
     const pipeline = StorageURL.newPipeline(sharedKeyCredential);
