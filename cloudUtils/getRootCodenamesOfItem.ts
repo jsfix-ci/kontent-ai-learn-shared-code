@@ -2,7 +2,7 @@ import {
     ContentItem,
     FieldType,
 } from 'kentico-cloud-delivery';
-import { IWebhookContentItem } from './index';
+import { IWebhookContentItem } from '../contracts/kenticoCloud';
 
 interface IContext {
     readonly visitedItems: string[],

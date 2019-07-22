@@ -35,7 +35,7 @@ export interface IZapiSpecification extends ISystemAttributes {
 }
 
 export interface ISecurityScheme extends ISystemAttributes {
-    readonly apiKeyLocation: string,
+    readonly apiKeyLocation: string[],
     readonly apiKeyName: string,
     readonly apiReference: string[],
     readonly bearerFormat: string,

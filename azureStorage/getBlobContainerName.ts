@@ -1,4 +1,4 @@
-import { IEventGridEvent } from './index';
+import { IEventGridEvent } from '../contracts/eventGrid';
 
 export const getBlobContainerName = <EventGridEventData>(
     eventGridEvent: IEventGridEvent<EventGridEventData>,
