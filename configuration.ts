@@ -28,7 +28,7 @@ export class Configuration {
     private static getEnvironmentVariable = (variableName: string, isTest?: boolean): string =>
         process.env[`${variableName}${isTest ? '.Test' : ''}`] || '';
 
-    private static getClearIndexUrl(isTest, section) {
+    private static getClearIndexUrl(isTest: boolean, section: string): string {
         const isTestQuery = isTest
             ? '&isTest=enabled'
             : '';
