@@ -1,0 +1,23 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "./node_modules/"
+    ]
+  },
+  "jsRules": {},
+  "rules": {
+    "no-string-throw": false,
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "semicolon": [
+      false
+    ]
+  },
+  "rulesDirectory": []
+}
