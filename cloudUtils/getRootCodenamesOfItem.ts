@@ -1,6 +1,6 @@
 import {
     ContentItem,
-    FieldType,
+    ElementType,
 } from 'kentico-cloud-delivery';
 import { IWebhookContentItem } from '../contracts/kenticoCloud';
 
@@ -66,17 +66,17 @@ const getDirectParents = (codename: string, allItems: ContentItem[]): ContentIte
         isInAnyLinkedItemsElement(item.elements as ContentItem, codename));
 
 const isInAnyRichTextElement = (parentItem: ContentItem, codename: string): boolean =>
-    isInElements(parentItem, codename, FieldType.RichText);
+    isInElements(parentItem, codename, ElementType.RichText);
 
 const isInAnyLinkedItemsElement = (itemElements: ContentItem, codename: string): boolean =>
-    itemElements && isInElements(itemElements as ContentItem, codename, FieldType.ModularContent);
+    itemElements && isInElements(itemElements as ContentItem, codename, ElementType.ModularContent);
 
-const isInElements = (parentItem: ContentItem, codename: string, fieldType: FieldType): boolean =>
+const isInElements = (parentItem: ContentItem, codename: string, elementType: ElementType): boolean =>
     Object
         .keys(parentItem)
         .map((key) => {
             const element = parentItem[key];
-            if (element.type && element.type === fieldType) {
+            if (element.type && element.type === elementType) {
                 const itemsInElement = element.linkedItemCodenames
                     ? element.linkedItemCodenames
                     : element.value;

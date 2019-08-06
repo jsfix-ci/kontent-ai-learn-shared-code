@@ -12,13 +12,13 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@azure/storage-blob": "10.3.0",
-    "kentico-cloud-delivery": "5.7.2",
+    "@azure/storage-blob": "10.4.0",
+    "kentico-cloud-delivery": "6.0.0-rc.1",
     "rxjs": "6.5.2"
   },
   "devDependencies": {
-    "@types/jest": "24.0.15",
-    "@types/node": "12.6.3",
+    "@types/jest": "24.0.17",
+    "@types/node": "12.6.9",
     "jest": "24.8.0",
     "ts-jest": "24.0.2",
     "tslint": "5.18.0",
