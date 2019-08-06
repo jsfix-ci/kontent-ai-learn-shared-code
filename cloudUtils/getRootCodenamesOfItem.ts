@@ -1,7 +1,5 @@
-import {
-    ContentItem,
-    ElementType,
-} from 'kentico-cloud-delivery';
+import { ContentItem, Elements, ElementType } from 'kentico-cloud-delivery';
+
 import { IWebhookContentItem } from '../contracts/kenticoCloud';
 
 interface IContext {
@@ -21,12 +19,12 @@ export const getRootCodenamesOfItem = (
         : getRootParents(item.codename, allItems, rootItemTypes);
 
 const getRootParents = (codename: string, allItems: ContentItem[], rootItemTypes: string[]): string[] => {
-    let itemsToVisit = getDirectParents(codename, allItems);
-    const visitedItems = [];
-    const rootItemCodenames = [];
+    let itemsToVisit: ContentItem[] = getDirectParents(codename, allItems);
+    const visitedItems: string[] = [];
+    const rootItemCodenames: string[] = [];
 
     while (itemsToVisit.length > 0) {
-        const newItemsToVisit = [];
+        const newItemsToVisit: ContentItem[] = [];
 
         itemsToVisit.forEach((item) => processItem(
             item,
@@ -45,7 +43,7 @@ const getRootParents = (codename: string, allItems: ContentItem[], rootItemTypes
 };
 
 const processItem = (itemToProcess: ContentItem, rootItemTypes: string[], context: IContext): void => {
-    const itemCodename = itemToProcess.system.codename;
+    const itemCodename: string = itemToProcess.system.codename;
 
     if (context.visitedItems.includes(itemCodename)) {
         return;
@@ -61,27 +59,23 @@ const processItem = (itemToProcess: ContentItem, rootItemTypes: string[], contex
 };
 
 const getDirectParents = (codename: string, allItems: ContentItem[]): ContentItem[] =>
-    allItems.filter((item) =>
-        isInAnyRichTextElement(item, codename) ||
-        isInAnyLinkedItemsElement(item.elements as ContentItem, codename));
+    allItems.filter((item) => isInAnyElement(item, codename));
 
-const isInAnyRichTextElement = (parentItem: ContentItem, codename: string): boolean =>
-    isInElements(parentItem, codename, ElementType.RichText);
-
-const isInAnyLinkedItemsElement = (itemElements: ContentItem, codename: string): boolean =>
-    itemElements && isInElements(itemElements as ContentItem, codename, ElementType.ModularContent);
-
-const isInElements = (parentItem: ContentItem, codename: string, elementType: ElementType): boolean =>
+const isInAnyElement = (
+    parentItem: ContentItem,
+    codename: string): boolean =>
     Object
         .keys(parentItem)
         .map((key) => {
             const element = parentItem[key];
-            if (element.type && element.type === elementType) {
-                const itemsInElement = element.linkedItemCodenames
-                    ? element.linkedItemCodenames
-                    : element.value;
-
-                return itemsInElement.includes(codename);
+            if (element instanceof Elements.RichTextElement) {
+                return element.linkedItemCodenames.includes(codename);
             }
+
+            if (element instanceof Elements.LinkedItemsElement) {
+                return element.itemCodenames.includes(codename);
+            }
+
+            return false;
         })
-        .reduce((accumulator, current) => accumulator || current, false);
+        .reduce((accumulator, current) => current === true ? true : accumulator, false);
