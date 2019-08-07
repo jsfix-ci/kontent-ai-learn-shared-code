@@ -1,4 +1,4 @@
-import { ContentItem, Elements, ElementType } from 'kentico-cloud-delivery';
+import { ContentItem, Elements } from 'kentico-cloud-delivery';
 
 import { IWebhookContentItem } from '../contracts/kenticoCloud';
 
