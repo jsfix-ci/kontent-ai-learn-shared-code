@@ -3,7 +3,7 @@ import {
     ContentItemSystemAttributes,
     Elements,
     IContentItemConfig,
-    IContentItemDebugData,
+    IContentItemRawData,
 } from 'kentico-cloud-delivery';
 
 import { IWebhookContentItem } from '../contracts/kenticoCloud';
@@ -43,9 +43,9 @@ const constructSystemAttributes = (type: string, codename: string) => new Conten
     type,
 });
 
-const constructDebugData: () => IContentItemDebugData = () => {
+const constructDebugData: () => IContentItemRawData = () => {
     return {
-        rawElements: {},
+        elements: {},
     }
 };
 
@@ -60,39 +60,39 @@ const constructConfigData: () => IContentItemConfig = () => {
 const rootItemType: string = 'root_item_codename';
 const allItems: ContentItem[] = [{
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     content: constructRichTextElement([]),
     system: constructSystemAttributes('callout', 'hello_world'),
 }, {
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     content: constructRichTextElement(['hello_world']),
     system: constructSystemAttributes('content_chunk', 'some_chunk'),
 }, {
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     description: constructRichTextElement(['some_chunk']),
     system: constructSystemAttributes(rootItemType, 'content_management_api'),
 }, {
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     description: constructRichTextElement(['hello_world']),
     system: constructSystemAttributes(rootItemType, 'delivery_api'),
 }];
 
 const allItemsWithCodeSamples: ContentItem[] = [{
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     code_samples: constructLinkedItemsElement(['hello_world']),
     system: constructSystemAttributes('code_samples', 'hello_world_samples'),
 }, {
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     content: constructRichTextElement(['hello_world_samples']),
     system: constructSystemAttributes('content_chunk', 'code_sample_chunk'),
 }, {
     _config: constructConfigData(),
-    _debug: constructDebugData(),
+    _raw: constructDebugData(),
     description: constructRichTextElement(['code_sample_chunk']),
     system: constructSystemAttributes(rootItemType, 'delivery_api'),
 }];

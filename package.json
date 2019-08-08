@@ -1,6 +1,6 @@
 {
   "name": "cloud-docs-shared-code",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Kentico Cloud Docs Shared Code",
   "repository": "https://github.com/KenticoDocs/cloud-docs-shared-code.git",
   "license": "MIT",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@azure/storage-blob": "10.4.0",
-    "kentico-cloud-delivery": "6.0.0-rc.2",
+    "kentico-cloud-delivery": "6.0.0-rc.3",
     "rxjs": "6.5.2"
   },
   "devDependencies": {
