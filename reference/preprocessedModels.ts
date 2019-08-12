@@ -122,7 +122,7 @@ export interface IImage extends ISystemAttributes {
     readonly description: string,
     readonly imageWidth: string[],
     readonly url: string,
-    readonly assets: IAsset[],
+    readonly asset: IAsset,
 }
 
 export interface IAsset {
