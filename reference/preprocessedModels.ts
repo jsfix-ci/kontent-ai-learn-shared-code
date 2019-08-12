@@ -122,7 +122,17 @@ export interface IImage extends ISystemAttributes {
     readonly description: string,
     readonly imageWidth: string[],
     readonly url: string,
-    readonly image: string,
+    readonly assets: IAsset[],
+}
+
+export interface IAsset {
+    readonly name: string;
+    readonly type: string;
+    readonly size: number;
+    readonly description?: string;
+    readonly url: string;
+    readonly width?: number;
+    readonly height?: number;
 }
 
 export interface ICallout extends ISystemAttributes {
