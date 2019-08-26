@@ -6,18 +6,16 @@ export enum ReferenceOperation {
 
 export interface IPreprocessedData {
     readonly zapiSpecificationCodename: string,
-    readonly items: unknown,
+    readonly items: {
+        [keys: string]: object,
+    },
     readonly operation: ReferenceOperation,
 }
 
 export interface ISystemAttributes {
     readonly id: string,
+    readonly codename: string;
     readonly contentType: string,
-}
-
-export interface IWrappedItem<Data extends ISystemAttributes> {
-    readonly codename: string,
-    readonly data: Data,
 }
 
 export interface IZapiSpecification extends ISystemAttributes {
