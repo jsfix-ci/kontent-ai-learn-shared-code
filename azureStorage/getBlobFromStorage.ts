@@ -5,7 +5,7 @@ import {
     StorageURL,
 } from '@azure/storage-blob';
 import { JQueryStyleEventEmitter } from 'rxjs/internal/observable/fromEvent';
-import { Configuration } from '../configuration';
+import { Configuration } from '../configuration/configuration';
 
 export const getBlobFromStorage = async <BlobData>(
     url: string,

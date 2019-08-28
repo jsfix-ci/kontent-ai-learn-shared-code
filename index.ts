@@ -8,3 +8,5 @@ export * from './contracts/kenticoCloud';
 export * from './contracts/search';
 
 export * from './reference/preprocessedModels';
+
+export * from './configuration/configuration';

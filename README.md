@@ -21,6 +21,23 @@ This repository contains shared code from all of other Kentico Cloud Docs reposi
  * `allItems` - items from Kentico Cloud project
  * `rootItemTypes` - types of the root content items
 
+## Shared classes
+
+### Configuration
+
+Contains [configuration settings](https://github.com/KenticoDocs/cloud-docs-shared-code/blob/master/configuration/configuration.ts) that are shared between the other Kentico Cloud Docs repositories:
+
+* `azureAccountName`
+* `azureContainerName`
+* `azureStorageKey`
+* `searchAdminApiKey`
+* `searchAppId`
+* `searchIndexName`
+* `kenticoProjectId`
+* `securedApiKey`
+* `previewApiKey`
+* `docsWebsiteUrl`
+
 ## Shared interfaces
 
 ### Contracts
@@ -28,6 +45,8 @@ This repository contains shared code from all of other Kentico Cloud Docs reposi
 [Event Grid](https://github.com/KenticoDocs/cloud-docs-shared-code/blob/master/contracts/eventGrid.ts) - Specifies an [Azure Event Grid schema](https://docs.microsoft.com/en-us/azure/event-grid/event-schema), along with the options for passed data in the event's `data` property.
 
 [Kentico Cloud](https://github.com/KenticoDocs/cloud-docs-shared-code/blob/master/contracts/kenticoCloud.ts) - Contains an `IWebhookContentItem` that specifies data sent in a webhook reacting to a change in published content.
+
+[Search](https://github.com/KenticoDocs/cloud-docs-shared-code/blob/master/contracts/search.ts) - Contains a contract for records sent to [IndexSync](https://github.com/KenticoDocs/cloud-docs-index-sync) service.
 
 ### Reference
 
