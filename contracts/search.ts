@@ -6,10 +6,8 @@ export interface IRecord {
     readonly codename: string;
     readonly objectID: string;
     readonly section: string;
-    readonly apiSpecificationCodename?: string;
     readonly order?: string;
     readonly platforms?: string[];
-    readonly urlFragment?: string;
 }
 
 export interface IItemRecordsBlob {
