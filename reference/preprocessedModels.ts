@@ -21,6 +21,7 @@ export interface ISystemAttributes {
 }
 
 export interface IZapiSpecification extends ISystemAttributes {
+    readonly apiStatus: string[],
     readonly apiReference: string[],
     readonly categories: string[],
     readonly contact: string[],
@@ -201,11 +202,12 @@ export interface ISchemaObject extends ISystemAttributes, ISchemaElements {
     readonly required: string,
     readonly properties: string,
     readonly additionalProperties: string,
+    readonly additionalPropertiesName: string,
 }
 
 export interface ISchemaOneOf extends ISystemAttributes, ISchemaElements {
     readonly apiReference: string[],
-    readonly schemas: string[],
+    readonly schemas: string,
     readonly discriminator: string,
 }
 
