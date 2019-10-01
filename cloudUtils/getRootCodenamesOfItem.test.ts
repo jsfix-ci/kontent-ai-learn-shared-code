@@ -10,7 +10,7 @@ import { IWebhookContentItem } from '../contracts/kenticoCloud';
 import { getRootCodenamesOfItem } from './getRootCodenamesOfItem';
 
 const constructRichTextElement = (modularContent: string[]) => new Elements.RichTextElement({
-    contentTypeSystem: null as any,
+    contentItemSystem: null as any,
     propertyName: '',
     rawElement: {
         name: '',
@@ -18,13 +18,13 @@ const constructRichTextElement = (modularContent: string[]) => new Elements.Rich
         value: '',
     },
 }, modularContent, {
-        images: [],
-        links: [],
-        resolveHtmlFunc: () => '',
-    });
+    images: [],
+    links: [],
+    resolveHtmlFunc: () => '',
+});
 
 const constructLinkedItemsElement = (linkItemCodenames: string[]) => new Elements.LinkedItemsElement({
-    contentTypeSystem: null as any,
+    contentItemSystem: null as any,
     propertyName: '',
     rawElement: {
         name: '',
