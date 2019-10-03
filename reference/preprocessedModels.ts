@@ -2,6 +2,7 @@ export enum ReferenceOperation {
     Initialize = 'INITIALIZE',
     Update = 'UPDATE',
     Preview = 'PREVIEW',
+    Delete = 'DELETE',
 }
 
 export interface IPreprocessedData {
