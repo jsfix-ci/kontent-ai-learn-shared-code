@@ -1,3 +1,5 @@
+import { Operation } from '../reference/preprocessedModels';
+
 export interface IRecord {
     readonly content: string;
     readonly id: string;
@@ -13,6 +15,6 @@ export interface IRecord {
 export interface IItemRecordsBlob {
     readonly codename: string;
     readonly id: string;
-    readonly initialize: boolean;
+    readonly operation: Operation;
     readonly itemRecords: IRecord[];
 }
