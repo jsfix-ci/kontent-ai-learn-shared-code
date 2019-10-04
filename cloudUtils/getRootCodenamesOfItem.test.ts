@@ -101,6 +101,7 @@ describe('getRootCodenamesOfItem', () => {
     it('returns both root zapi specification items', () => {
         const item: IWebhookContentItem = {
             codename: 'hello_world',
+            id: '123',
             language: 'default',
             type: 'callout',
         };
@@ -114,6 +115,7 @@ describe('getRootCodenamesOfItem', () => {
     it('returns root of a nested code_sample item', () => {
         const item: IWebhookContentItem = {
             codename: 'hello_world',
+            id: '123',
             language: 'default',
             type: 'code_sample',
         };
@@ -127,6 +129,7 @@ describe('getRootCodenamesOfItem', () => {
     it('returns an empty array when it finds no root items', () => {
         const item: IWebhookContentItem = {
             codename: 'some_codename',
+            id: '123',
             language: 'default',
             type: 'some_type',
         };

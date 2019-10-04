@@ -4,6 +4,7 @@ export interface IKenticoCloudError extends Error {
 
 export interface IWebhookContentItem {
     readonly codename: string,
+    readonly id: string;
     readonly language: string;
     readonly type: string,
 }
