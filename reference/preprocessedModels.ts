@@ -7,6 +7,7 @@ export enum ReferenceOperation {
 
 export interface IPreprocessedData {
     readonly zapiSpecificationCodename: string,
+    readonly zapiSpecificationId: string;
     readonly items: IPreprocessedItems,
     readonly operation: ReferenceOperation,
 }
