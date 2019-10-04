@@ -1,4 +1,4 @@
-export enum ReferenceOperation {
+export enum Operation {
     Initialize = 'INITIALIZE',
     Update = 'UPDATE',
     Preview = 'PREVIEW',
@@ -9,7 +9,7 @@ export interface IPreprocessedData {
     readonly zapiSpecificationCodename: string,
     readonly zapiSpecificationId: string;
     readonly items: IPreprocessedItems,
-    readonly operation: ReferenceOperation,
+    readonly operation: Operation,
 }
 
 export interface IPreprocessedItems {
