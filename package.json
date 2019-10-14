@@ -1,8 +1,8 @@
 {
-  "name": "cloud-docs-shared-code",
-  "version": "3.3.3",
-  "description": "Kentico Cloud Docs Shared Code",
-  "repository": "https://github.com/KenticoDocs/cloud-docs-shared-code.git",
+  "name": "kontent-docs-shared-code",
+  "version": "4.0.0",
+  "description": "Kentico Kontent Docs Shared Code",
+  "repository": "https://github.com/KenticoDocs/kontent-docs-shared-code.git",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

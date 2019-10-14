@@ -1,4 +1,4 @@
-export interface IKenticoCloudError extends Error {
+export interface IKenticoKontentError extends Error {
     readonly errorCode: number,
 }
 

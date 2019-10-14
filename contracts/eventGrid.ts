@@ -1,4 +1,4 @@
-import { IWebhookContentItem } from './kenticoCloud';
+import { IWebhookContentItem } from './kontent';
 
 export type IWebhookEventGridEvent = IEventGridEvent<IEventGridWebhookData>;
 export type IBlobEventGridEvent = IEventGridEvent<IEventGridBlobData>;

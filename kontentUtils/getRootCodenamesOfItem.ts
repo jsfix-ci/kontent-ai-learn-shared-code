@@ -1,6 +1,6 @@
 import { ContentItem, Elements } from 'kentico-cloud-delivery';
 
-import { IWebhookContentItem } from '../contracts/kenticoCloud';
+import { IWebhookContentItem } from '../contracts/kontent';
 
 interface IContext {
     readonly visitedItems: string[],

@@ -6,7 +6,7 @@ import {
     IContentItemRawData,
 } from 'kentico-cloud-delivery';
 
-import { IWebhookContentItem } from '../contracts/kenticoCloud';
+import { IWebhookContentItem } from '../contracts/kontent';
 import { getRootCodenamesOfItem } from './getRootCodenamesOfItem';
 
 const constructRichTextElement = (modularContent: string[]) => new Elements.RichTextElement({
