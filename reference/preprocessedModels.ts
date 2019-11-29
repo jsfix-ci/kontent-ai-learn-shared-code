@@ -168,6 +168,7 @@ export interface ISchemaObjectPropertyElements {
     readonly nullable: string[],
     readonly readonly: string[],
     readonly writeonly: string[],
+    readonly deprecated: string[],
 }
 
 export interface ISchemaAllOf extends ISystemAttributes, ISchemaElements {
