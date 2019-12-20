@@ -171,7 +171,7 @@ export interface ISchemaObjectPropertyElements {
     readonly deprecated: string[],
 }
 
-export interface ISchemaAllOf extends ISystemAttributes, ISchemaElements {
+export interface ISchemaAllOf extends ISystemAttributes, ISchemaElements, ISchemaObjectPropertyElements {
     readonly apiReference: string[],
     readonly schemas: string,
 }
@@ -181,7 +181,7 @@ export interface ISchemaAnyOf extends ISystemAttributes, ISchemaElements, ISchem
     readonly schemas: string[],
 }
 
-export interface ISchemaArray extends ISystemAttributes, ISchemaElements {
+export interface ISchemaArray extends ISystemAttributes, ISchemaElements, ISchemaObjectPropertyElements {
     readonly apiReference: string[],
     readonly items: string,
     readonly uniqueItems: string[],
@@ -200,7 +200,7 @@ export interface ISchemaInteger extends ISystemAttributes, ISchemaElements, ISch
     readonly maximum: number,
 }
 
-export interface ISchemaObject extends ISystemAttributes, ISchemaElements {
+export interface ISchemaObject extends ISystemAttributes, ISchemaElements, ISchemaObjectPropertyElements {
     readonly apiReference: string[],
     readonly required: string,
     readonly properties: string,
@@ -208,7 +208,7 @@ export interface ISchemaObject extends ISystemAttributes, ISchemaElements {
     readonly additionalPropertiesName: string,
 }
 
-export interface ISchemaOneOf extends ISystemAttributes, ISchemaElements {
+export interface ISchemaOneOf extends ISystemAttributes, ISchemaElements, ISchemaObjectPropertyElements {
     readonly apiReference: string[],
     readonly schemas: string,
     readonly discriminator: string,
