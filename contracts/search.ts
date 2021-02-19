@@ -15,6 +15,7 @@ export interface IRecord {
     readonly section: Section;
     readonly order?: string;
     readonly platforms?: string[];
+    readonly isCodeSample: boolean;
 }
 
 export interface IItemRecordsBlob {
