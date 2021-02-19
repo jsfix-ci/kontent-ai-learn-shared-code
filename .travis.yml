@@ -3,8 +3,8 @@ language: node_js
 node_js:
   - "10"
 before_deploy:
-  - yarn tslint
-  - yarn run build
+  - npm run tslint
+  - npm run build
   - mv package.json ./lib/package.json
   - mv README.md ./lib/README.md
   - cd ./lib/
