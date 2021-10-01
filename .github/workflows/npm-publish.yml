@@ -23,9 +23,10 @@ jobs:
           npm run test
       - name: 'Prepare for library publish'
         run: |
-          mv ${{ github.action_path }}/package.json ${{ github.action_path }}/lib/package.json
-          mv ${{ github.action_path }}/README.md ${{ github.action_path }}/lib/README.md
-          cd ${{ github.action_path }}/lib/
+          echo ${{ github.action_path }}
+          mv "${{ github.action_path }}/package.json" "${{ github.action_path }}/lib/package.json"
+          mv "${{ github.action_path }}/README.md" "${{ github.action_path }}/lib/README.md"
+          cd "${{ github.action_path }}/lib/"
       - name: 'Publish to NPM if version changed'
         uses: JS-DevTools/npm-publish@v1
         id: publish

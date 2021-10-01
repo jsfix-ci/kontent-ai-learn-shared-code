@@ -4,8 +4,8 @@
   "description": "Kentico Kontent Docs Shared Code",
   "repository": "https://github.com/KenticoDocs/kontent-docs-shared-code.git",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
     "tslint": "tslint --project tsconfig.json",
