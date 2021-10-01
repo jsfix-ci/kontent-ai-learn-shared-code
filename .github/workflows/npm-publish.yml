@@ -1,7 +1,9 @@
 name: Publish to npm
 
 on:
-  push
+  push:
+    branches:
+      - master
 
 env:
   NODE_VERSION: 10.14.1
@@ -23,10 +25,9 @@ jobs:
           npm run test
       - name: 'Prepare for library publish'
         run: |
-          echo ${{ github.action_path }}
-          mv "${{ github.action_path }}/package.json" "${{ github.action_path }}/lib/package.json"
-          mv "${{ github.action_path }}/README.md" "${{ github.action_path }}/lib/README.md"
-          cd "${{ github.action_path }}/lib/"
+          mv ./package.json ./lib/package.json
+          mv ./README.md ./lib/README.md
+          cd ./lib/
       - name: 'Publish to NPM if version changed'
         uses: JS-DevTools/npm-publish@v1
         id: publish
