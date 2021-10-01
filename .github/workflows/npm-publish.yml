@@ -33,3 +33,4 @@ jobs:
         id: publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          package: ./lib/package.json
