@@ -7,7 +7,7 @@ env:
   NODE_VERSION: 10.14.1
 
 jobs:
-  publish:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout GitHub Action'
@@ -19,18 +19,15 @@ jobs:
       - name: 'Build and test'
         run: |
           npm install
-          npm build
-          npm test
-      - name: 'Prepare for publish'
+          npm run build
+          npm run test
+      - name: 'Prepare for library publish'
         run: |
-          mv package.json ./lib/package.json
-          mv README.md ./lib/README.md
-          cd ./lib/
-      - name: Publish to NPM if version changed
+          mv ${{ github.action_path }}/package.json ${{ github.action_path }}/lib/package.json
+          mv ${{ github.action_path }}/README.md ${{ github.action_path }}/lib/README.md
+          cd ${{ github.action_path }}/lib/
+      - name: 'Publish to NPM if version changed'
         uses: JS-DevTools/npm-publish@v1
         id: publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
-      - if: steps.publish.outputs.type != 'none'
-        run: |
-          echo "Version changed: ${{ steps.publish.outputs.old-version }} => ${{ steps.publish.outputs.version }}"

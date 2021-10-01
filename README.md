@@ -6,6 +6,17 @@
 
 This repository contains shared code from all of other Kentico Kontent Docs repositories.
 
+## Publish to NPM
+
+This repository is published to NPM as the [kontent-docs-shared-code](https://www.npmjs.com/package/kontent-docs-shared-code) package.
+
+To publish a new version of the kontent-docs-shared-code library to the NPM registry:
+
+1. Increase the main `version` in `project.json`.
+2. Push your change to the `master` branch.
+
+The [NPM Publish GitHub Action](https://github.com/marketplace/actions/npm-publish) will take care of the rest. If you push code changes without increasing the `version` in `project.json`, the new code will not be published to NPM.
+
 ## Shared functions
 
 ### Azure storage
@@ -14,18 +25,19 @@ This repository contains shared code from all of other Kentico Kontent Docs repo
 
 [getBlobFromStorage](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/azureStorage/getBlobFromStorage.ts) - Async function that returns content of an Azure blob as a JSON object.
 
-### Kentico Kontent utils
+### Kontent utils
 
-[getRootCodenamesOfItem](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/kontentUtils/getRootCodenamesOfItem.ts) - Traverses structured content from Kentico Kontent and returns codenames of found root items. Requires:
- * `item` - data about the item where the traversal starts
- * `allItems` - items from Kentico Kontent project
- * `rootItemTypes` - types of the root content items
+[getRootCodenamesOfItem](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/kontentUtils/getRootCodenamesOfItem.ts) - Traverses structured content from Kontent and returns codenames of found root items. Requires:
+
+* `item` - data about the item where the traversal starts
+* `allItems` - items from the Kontent project
+* `rootItemTypes` - types of the root content items
 
 ## Shared classes
 
 ### Configuration
 
-Contains [configuration settings](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/configuration/configuration.ts) that are shared between the other Kentico Kontent Docs repositories:
+Contains [configuration settings](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/configuration/configuration.ts) that are shared between the other Kontent Docs repositories:
 
 * `azureAccountName`
 * `azureContainerName`
@@ -50,10 +62,12 @@ Contains [configuration settings](https://github.com/KenticoDocs/kontent-docs-sh
 
 ### Reference
 
-[Preprocessed models](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/reference/preprocessedModels.ts) - Interfaces of preprocessed data models from Kentico Kontent. Those models are based on an [OpenAPI Specification 3.0.2](https://github.com/OAI/OpenAPI-Specification).
+[Preprocessed models](https://github.com/KenticoDocs/kontent-docs-shared-code/blob/master/reference/preprocessedModels.ts) - Interfaces of preprocessed data models from Kontent. Those models are based on an [OpenAPI Specification 3.0.2](https://github.com/OAI/OpenAPI-Specification).
 
 ## How To Contribute
+
 Feel free to open a new issue where you describe your proposed changes, or even create a new pull request from your branch with proposed changes.
 
 ## Licence
+
 All the source codes are published under MIT licence.
