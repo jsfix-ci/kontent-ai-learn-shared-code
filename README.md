@@ -1,6 +1,4 @@
-| [master](https://github.com/KenticoDocs/kontent-docs-open-api-provider/tree/master) |
-|:---:|
-| [![Build Status](https://travis-ci.com/KenticoDocs/kontent-docs-shared-code.svg?branch=master)](https://travis-ci.com/KenticoDocs/kontent-docs-shared-code) [![codebeat badge](https://codebeat.co/badges/df164ae8-5b58-4e74-8519-5cceb6d5083a)](https://codebeat.co/projects/github-com-kenticodocs-kontent-docs-shared-code-master) |
+![master](https://github.com/KenticoDocs/kontent-docs-shared-code/actions/workflows/npm-publish.yml/badge.svg)
 
 # Kentico Kontent Documentation - Shared code
 
